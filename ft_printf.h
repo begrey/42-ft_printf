@@ -6,7 +6,7 @@
 /*   By: jimkwon <jimkwon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 12:26:58 by jimkwon           #+#    #+#             */
-/*   Updated: 2020/11/06 18:56:19 by jimkwon          ###   ########.fr       */
+/*   Updated: 2020/11/09 18:30:13 by jimkwon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,13 @@ void	get_flag(char *str, va_list ap, t_flag *f);
 int get_d(char *str, va_list ap, t_flag *f);
 int get_c(char *str, va_list ap, t_flag *f);
 int	get_s(char *str, va_list ap, t_flag *f);
+int	get_x(char *str, va_list ap, t_flag *f, char c);
+int get_u(char *str, va_list ap, t_flag *f);
+int	get_p(char *str, va_list ap, t_flag *f);
+int	get_percent(char *str, va_list ap, t_flag *f);
 int print_flag(int w, int len, char *s);
+char *ft_itoa_base(long value, int base, char c);
+int set_prev_and_width(char *s, t_flag *f, long num);
+int	zero_flag(t_flag *f, long num, char *s);
 
 #endif

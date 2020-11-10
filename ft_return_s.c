@@ -6,7 +6,7 @@
 /*   By: jimkwon <jimkwon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/06 15:04:54 by jimkwon           #+#    #+#             */
-/*   Updated: 2020/11/06 19:04:48 by jimkwon          ###   ########.fr       */
+/*   Updated: 2020/11/09 16:31:16 by jimkwon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	check_s_left(char *s, t_flag *f)
 {
 	int result;
-	
+
 	if (f->zero == TRUE)
 		result = print_flag(f->width - (int)ft_strlen(s), 0, "0");
 	else
@@ -35,6 +35,8 @@ int	get_s(char *str, va_list ap, t_flag *f)
 	s = va_arg(ap, char *);
 	if (!s)
 		s = "(null)";
+	if (s[0] == '\0')
+		s = "";
 	if ((int)ft_strlen(s) < f->prec || (f->prec == 0 && f->prec_zero == FALSE)) //정밀도가 인자 길이보다 같거나 크면 의미없으니 음수로 설정, 애초에 음수 정밀도는 무시당함
 		f->prec = -1;
 	if (f->prec > 0 && f->prec < (int)ft_strlen(s)) //정밀도가 인자 길이보다 작으면 정밀도 만큼만 문자열 자르기

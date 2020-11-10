@@ -6,16 +6,16 @@
 /*   By: jimkwon <jimkwon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/05 14:34:08 by jimkwon           #+#    #+#             */
-/*   Updated: 2020/11/06 17:01:27 by jimkwon          ###   ########.fr       */
+/*   Updated: 2020/11/10 17:03:30 by jimkwon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void prec_wildcard(char *str, char *ptr, t_flag *f, char *w, va_list ap)
+void		prec_wildcard(char *str, char *ptr, t_flag *f, char *w, va_list ap)
 {
-	int wild;
-	int	flag;
+	int		wild;
+	int		flag;
 
 	flag = 0;
 	if (w < ptr) //폭에 와일드 카드가 있을 때
@@ -35,7 +35,7 @@ void prec_wildcard(char *str, char *ptr, t_flag *f, char *w, va_list ap)
 		f->prec = ft_atoi(ft_substr(ptr + 1, 0, ft_strlen(ptr))); //정밀도에 와카 없으면 따로 지정
 }
 
-void	check_prec(t_flag *f, char *ptr, char *str, va_list ap)
+void		check_prec(t_flag *f, char *ptr, char *str, va_list ap)
 {
 	char	*w;
 	int		flag;
@@ -53,9 +53,9 @@ void	check_prec(t_flag *f, char *ptr, char *str, va_list ap)
 		f->zero = FALSE;
 }
 
-void check_width(va_list ap, char *str, t_flag *f) //없을땐 substring에서 ""이니 널값으로 0이 알아서 들어옴. 즉 0은 너비가 읍다
+void		check_width(va_list ap, char *str, t_flag *f) //없을땐 substring에서 ""이니 널값으로 0이 알아서 들어옴. 즉 0은 너비가 읍다
 {
-	int wild;
+	int		wild;
 	
 	wild = 0;
 	f->prec_zero = FALSE;
@@ -69,7 +69,7 @@ void check_width(va_list ap, char *str, t_flag *f) //없을땐 substring에서 "
 	f->prec = 0;
 }
 
-void	get_flag(char *str, va_list ap, t_flag *f)
+void		get_flag(char *str, va_list ap, t_flag *f)
 {
 	char	*ptr;
 

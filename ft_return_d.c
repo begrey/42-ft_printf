@@ -6,7 +6,7 @@
 /*   By: jimkwon <jimkwon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 16:08:32 by jimkwon           #+#    #+#             */
-/*   Updated: 2020/11/06 19:22:11 by jimkwon          ###   ########.fr       */
+/*   Updated: 2020/11/10 12:32:33 by jimkwon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int print_flag(int w, int len, char *s)
 	return (len);
 }
 
-int	zero_flag(t_flag *f, int num, char *s)
+int	zero_flag(t_flag *f, long num, char *s)
 {
 	int len;
 	int i;
@@ -50,7 +50,7 @@ int	zero_flag(t_flag *f, int num, char *s)
 	return (len + (int)ft_strlen(s));
 }
 
-int set_prev_and_width(char *s, t_flag *f, int num)
+int set_prev_and_width(char *s, t_flag *f, long num)
 {
 	int		minus;
 	int		w;
@@ -104,4 +104,3 @@ int get_d(char *str, va_list ap, t_flag *f)
 		len = print_flag(w, len, " ");
 	return (len);
 }
-
