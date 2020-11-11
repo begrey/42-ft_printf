@@ -6,7 +6,7 @@
 /*   By: jimkwon <jimkwon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/06 13:57:38 by jimkwon           #+#    #+#             */
-/*   Updated: 2020/11/06 16:29:12 by jimkwon          ###   ########.fr       */
+/*   Updated: 2020/11/10 17:38:49 by jimkwon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ int	get_c(char *str, va_list ap, t_flag *f)
 	f->width -= 1;
 	if (f->width < 1)
 		f->width = 0;
-	if (f->left == FALSE) //오른쪽 정렬일 때
+	if (f->left == FALSE)
 		len = print_flag(f->width, len, " ");
 	write(1, &c, 1);
-	if (f->left == TRUE) //왼쪽 정렬일 때
+	if (f->left == TRUE)
 		len = print_flag(f->width, len, " ");
 	return (len);
 }

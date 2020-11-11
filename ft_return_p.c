@@ -6,7 +6,7 @@
 /*   By: jimkwon <jimkwon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/09 14:49:25 by jimkwon           #+#    #+#             */
-/*   Updated: 2020/11/10 16:06:57 by jimkwon          ###   ########.fr       */
+/*   Updated: 2020/11/10 19:36:11 by jimkwon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,12 @@ char		*ft_itoa_base_p(long value, int base, char c)
 	return (ans);
 }
 
-int	get_p(char *str, va_list ap, t_flag *f)
+int			get_p(char *str, va_list ap, t_flag *f)
 {
-	long num;
-	char *s;
-	int len;
-	int w;
+	long	num;
+	char	*s;
+	int		len;
+	int		w;
 
 	len = 0;
 	get_flag(str, ap, f);
@@ -53,11 +53,12 @@ int	get_p(char *str, va_list ap, t_flag *f)
 	else
 		s = ft_itoa_base_p(num, 16, 'a');
 	w = set_prev_and_width(s, f, num);
-	if (f->left == FALSE) //오른쪽 정렬일 때
+	if (f->left == FALSE)
 		len = print_flag(w, len, " ");
 	write(1, s, ft_strlen(s));
 	len += (int)ft_strlen(s);
-	if (f->left == TRUE) //왼쪽 정렬일 때
+	if (f->left == TRUE)
 		len = print_flag(f->width - (int)ft_strlen(s), len, " ");
+	free(s);
 	return (len);
 }
